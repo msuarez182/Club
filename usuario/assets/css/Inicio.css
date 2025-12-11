@@ -1,0 +1,154 @@
+/* Estilo para la fuente Acumin Variable Concept */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a,
+header,
+footer {
+    font-family: 'Acumin Variable Concept', sans-serif !important;
+}
+
+/* Estilos personalizados */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.content-section {
+    padding: 4rem 0;
+}
+
+.text-primary-custom {
+    color: #f28c28;
+}
+
+.btn-primary-custom {
+    background-color: #f28c28;
+    border-color: #f28c28;
+    color: white !important;
+    text-transform: capitalize;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e87200;
+    border-color: #e87200;
+    color: white;
+}
+
+/* Estilo para la sección de contenidos */
+.content-title {
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 2rem !important;
+    position: relative;
+    text-align: center;
+}
+
+.content-title:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    /* Línea más gruesa */
+    background-color: #f28c28;
+    /* Mismo color que el header */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.content-title span {
+    background-color: white;
+    padding: 0 30px;
+    /* Más espacio alrededor del texto */
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-text {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    /* Texto justificado */
+}
+
+/* Textos justificados en otras secciones */
+.hero-section p,
+.video-content p {
+    text-align: justify;
+}
+
+/* Sección de video mejorada */
+.video-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.video-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-content {
+    padding-left: 2rem;
+}
+
+.video-content h2 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.video-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos adicionales para el modal */
+.modal-header {
+    background-color: #f28c28;
+    color: white;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+.terminos-condiciones{
+    color: #f28c28;
+    text-decoration:none;
+}

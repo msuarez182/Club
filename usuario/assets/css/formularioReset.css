@@ -1,0 +1,6 @@
+.form-password {
+    @media(min-width:992px) {
+        margin: 0 auto;
+        width: 38%;
+    }
+}

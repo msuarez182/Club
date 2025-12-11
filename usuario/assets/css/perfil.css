@@ -1,0 +1,104 @@
+
+    @font-face {
+      font-family: 'Acumin Variable Concept';
+      src: url('path-to-your-font/AcuminVariableConcept.woff2') format('woff2'),
+        url('path-to-your-font/AcuminVariableConcept.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      font-family: 'Acumin Variable Concept', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .main-container {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+    }
+
+    .profile-title {
+      color: #000000;
+      /* Cambiado a negro */
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .section-title {
+      color: #eb9022;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eb9022;
+      font-size: 1.4rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: #34495e;
+    }
+
+    .btn-save {
+      background-color: #eb9022;
+      color: white;
+      font-weight: 600;
+      padding: 10px 25px;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-save:hover {
+      background-color: #d17e1a;
+      transform: translateY(-2px);
+    }
+
+    .input-group-text {
+      background-color: #4ca8d1;
+      color: white;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: #4ca8d1;
+      box-shadow: 0 0 0 0.25rem rgba(76, 168, 209, 0.25);
+    }
+
+    .toggle-password {
+      border-color: #4ca8d1;
+      color: #4ca8d1;
+    }
+
+    .toggle-password:hover {
+      background-color: #4ca8d1;
+      color: white;
+    }
+
+    .alert {
+      margin-top: 20px;
+    }
+
+    .readonly-field {
+      background-color: #f8f9fa;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 576px) {
+      .main-container {
+        padding: 20px;
+      }
+
+      .profile-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Estilo para el campo de contraseña cuando se muestra */
+    .password-field {
+      display: none;
+    }

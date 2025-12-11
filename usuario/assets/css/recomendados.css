@@ -1,0 +1,24 @@
+
+.btn-primary-custom {
+    background-color: #f28c28;
+    border-color: #f28c28;
+    color: white !important;
+    text-transform: capitalize;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e87200;
+    border-color: #e87200;
+    color: white;
+}
+
+.articulo-recomendado{
+    background-color: #f28c28;
+}
+
+.infografia-recomendado{
+    background-color:#4CA8D1;
+}
+.video-recomendado{
+    background-color: #a1391e
+}

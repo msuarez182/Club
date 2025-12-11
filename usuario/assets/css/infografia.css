@@ -1,0 +1,255 @@
+@font-face {
+    font-family: 'Acumin Variable Concept';
+    src: url('../fonts/AcuminVariableConcept.woff2') format('woff2'),
+        url('../fonts/AcuminVariableConcept.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Acumin Variable Concept', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+/* Paleta de colores */
+:root {
+    --primary: #4ca8d1;
+    --primary-light: rgba(76, 168, 209, 0.1);
+    --primary-dark: #3a8cb7;
+    --secondary: #eb9022;
+    --secondary-light: rgba(235, 144, 34, 0.1);
+    --secondary-dark: #d17e1a;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.border-primary {
+    border-color: var(--primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: white;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.border-secondary {
+    border-color: var(--secondary) !important;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+    color: white;
+}
+
+/* Estructura principal */
+.main-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
+
+/* Encabezado de la infografía */
+.infografia-header {
+    margin-bottom: 30px;
+}
+
+.infografia-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+/* Imagen principal */
+.infografia-featured-image {
+    border-radius: 8px;
+    margin: 30px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+/* Pie de la infografía */
+.infografia-footer {
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Badge de categoría */
+.category-badge {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    background-color: var(--primary);
+    color: white;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+/* Botones de compartir */
+.share-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* Botón de descarga */
+.download-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    background: transparent;
+    margin-right: 10px;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-outline-primary {
+    border-color: var(--primary);
+    color: var(--primary);
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .main-container {
+        padding: 30px;
+    }
+
+    .infografia-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 25px;
+    }
+
+    .infografia-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-container {
+        padding: 20px;
+        border-radius: 0;
+    }
+
+    .infografia-title {
+        font-size: 1.8rem;
+    }
+
+    .infografia-featured-image {
+        margin: 20px auto;
+    }
+
+    .infografia-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.btn-primary-custom {
+    background-color: #f28c28;
+    border-color: #f28c28;
+    color: white !important;
+    text-transform: capitalize;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e87200;
+    border-color: #e87200;
+    color: white;
+}
+
+.continuar__leyendo {
+    width: 100%;
+    display: flex;
+    place-content: center;
+}
+
+.continuar__leyendo button {
+    border-radius: 25px 25px 25px 25px;
+    padding: 16px 40px;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.blur-3 {
+    filter: blur(3px);
+}
