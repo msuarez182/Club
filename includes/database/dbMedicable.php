@@ -9,7 +9,7 @@ function dbMedicable()
 {
 $servidor = "localhost";
 $usuario = "root";
-$clave = "maiki";
+$clave = "";
 $baseDeDatos = "medicable_nversion";
 
 

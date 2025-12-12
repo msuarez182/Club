@@ -7,67 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f5f5f5;
-        }
-        
-        .main-container {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
-        
-        .document-title {
-            color: #2c3e50;
-            font-weight: 700;
-            margin-bottom: 25px;
-            text-align: center;
-            font-size: 2rem;
-        }
-        
-        .section-title {
-            color: #e67e22;
-            font-weight: 600;
-            margin: 30px 0 15px;
-            font-size: 1.4rem;
-        }
-        
-        .last-update {
-            color: #7f8c8d;
-            font-style: italic;
-            text-align: right;
-            margin-bottom: 30px;
-        }
-        
-        .btn-back {
-            background-color: #e67e22;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        
-        .btn-back:hover {
-            background-color: #d35400;
-            color: white;
-        }
-        
-        @media (max-width: 576px) {
-            .main-container {
-                padding: 25px;
-            }
-            
-            .document-title {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/aviso-privacidad.css">
+    
 </head>
 <body>
   <?php include("includes/authModal.php"); ?>
