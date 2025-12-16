@@ -5,6 +5,15 @@
 
 use App\ActiveRecord;
 
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../funciones.php';
+
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
+$dotenv->safeLoad();
+
+
 function dbMedicable()
 {
 
