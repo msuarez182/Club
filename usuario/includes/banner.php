@@ -2,14 +2,14 @@
   <div id="bannerCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden mx-auto" style="max-width: 1400px;" data-bs-ride="carousel">
     
     <!-- Contenido del carrusel -->
-    <div class="carousel-inner" style="height: 300px;"> <!-- Altura fija (ajusta según necesidad) -->
+    <div class="carousel-inner" style="height: 300px;"> <!-- Altura fija (ajusta segï¿½n necesidad) -->
       
       <!-- Banner 1 -->
       <div class="carousel-item active h-100">
         <a href="https://ejemplo.com/promocion1" target="_blank">
-          <img src="https://picsum.photos/1400/300.webp?random=1" 
+          <img src="../usuario/assets/img/prueba.png" 
                class="d-block w-100 h-100 object-fit-cover" 
-               alt="Promoción exclusiva"
+               alt="Promociï¿½n exclusiva"
                loading="lazy"
                width="1400"
                height="300">
@@ -41,7 +41,7 @@
       </div>
     </div>
     
-    <!-- Controles de navegación -->
+    <!-- Controles de navegaciï¿½n -->
     <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon bg-dark bg-opacity-25 rounded-end p-3"></span>
       <span class="visually-hidden">Anterior</span>
