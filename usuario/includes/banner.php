@@ -7,7 +7,7 @@
       <!-- Banner 1 -->
       <div class="carousel-item active h-100">
         <a href="https://ejemplo.com/promocion1" target="_blank">
-          <img src="../usuario/assets/img/prueba.png" 
+          <img src="../usuario/assets/img/prueba1.png" 
                class="d-block w-100 h-100 object-fit-cover" 
                alt="Promoci�n exclusiva"
                loading="lazy"
