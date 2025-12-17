@@ -20,7 +20,7 @@ function sanitizar($html): string
 function base_path(): string
 {
     //https://medicable.com.mx/club/
-    return "localhost/club/";
+    return "http://localhost/club/";
 }
 
 //verifica si esta logueado
