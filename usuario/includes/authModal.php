@@ -323,7 +323,7 @@ $base_path = '/club/';
                         <div class="col-md-6 mb-3 password-input-group">
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="password_1" required placeholder="Crea una contraseña">
-                            <span class="password-toggle" id="registerPasswordToggle">
+                            <span class="password-toggle ojito" id="registerPasswordToggle">
                                 <i class="far fa-eye"></i>
                             </span>
                         </div>
@@ -331,7 +331,7 @@ $base_path = '/club/';
                         <div class="col-md-6 mb-3 password-input-group">
                             <label for="password_confirm" class="form-label">Confirmar Contraseña</label>
                             <input type="password" class="form-control" id="password_confirm" required placeholder="Confirma tu contraseña" name="password">
-                            <span class="password-toggle" id="registerConfirmPasswordToggle">
+                            <span class="password-toggle ojito" id="registerConfirmPasswordToggle">
                                 <i class="far fa-eye"></i>
                             </span>
                         </div>

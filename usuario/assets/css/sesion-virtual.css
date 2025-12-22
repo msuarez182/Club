@@ -189,10 +189,9 @@
 
 
     .video-sv iframe {
-        margin-top: 20px;
         width: 100% !important;
-        min-height: 350px;
-
+        height: 160px;
+        
 
     }
 
@@ -221,4 +220,15 @@
     .btn-evento {
         font-weight: 900;
         font-size: 20px;
+    }
+
+    /*Tamaño de fuente descripcion sv*/
+    .article-content {
+        font-size: 1rem !important;
+    }
+
+    @media(min-width:768px) {
+        .article-content {
+            font-size: 22px !important;
+        }
     }

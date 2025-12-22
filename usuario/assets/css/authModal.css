@@ -797,6 +797,9 @@ body.menu-open {
         top: 70% !important;
         right: 10px;
     }
+    .ojito{
+        right: 20px;
+    }
 
     .password-input-group .form-control {
         padding-right: 45px;

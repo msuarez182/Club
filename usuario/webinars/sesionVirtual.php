@@ -57,14 +57,14 @@ $sv = $resultado->fetch_assoc();
             <!-- Encabezado de sv -->
             <section class="article-header">
                 <div class="text-center">
-                    <h1 class="3-title"><?= sanitizar($sv['titulo']) ?></h1>
+                    <h1 class="1-title"><?= sanitizar($sv['titulo']) ?></h1>
                 </div>
 
                 <?php if ($sv['link_video']): ///si existe un link de video en la bd
                 ?>
 
                     <!-- Elimina el boton de confirme y muestra el video y el contenido de la publicación  -->
-                    <div class="video-sv">
+                    <div class="video-sv mt-3">
                         <?php
 
                         if (!$usuarioLogueado) { //si no esta logueado solo muestra la portada del video en youtube
@@ -118,7 +118,7 @@ $sv = $resultado->fetch_assoc();
                             //Youtube no permite crear un iframe y pegar en el src una dirección de youtube dinamica, se debe embeber
                             $url_embebida = embeberYoutubeUrl($sv['link_video']);
                         ?>
-                            <div class="tumb">
+                            <div class="tumb mt-3">
                                 <iframe src="<?php echo $url_embebida ?>"
                                     frameborder="0" allowfullscreen></iframe>
                             </div>
