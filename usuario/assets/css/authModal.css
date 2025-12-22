@@ -607,7 +607,7 @@ body.menu-open {
 
 .password-toggle {
     position: absolute;
-    right: 15px;
+    right: 5px;
     top: 70%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -619,12 +619,19 @@ body.menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
-
+@media(min-width:768px){ 
+.password-toggle{
+    right: 10px;
+}
+.ojito{
+    right: 20px;
+}
+}
 .password-input-group .form-control {
-    padding-right: 50px;
+    padding-right: 10px;
 }
 
 .password-toggle:hover {
@@ -795,7 +802,6 @@ body.menu-open {
 
     .password-toggle {
         top: 70% !important;
-        right: 10px;
     }
     .ojito{
         right: 20px;

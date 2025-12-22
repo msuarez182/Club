@@ -330,7 +330,7 @@ $base_path = '/club/';
 
                         <div class="col-md-6 mb-3 password-input-group">
                             <label for="password_confirm" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" class="form-control" id="password_confirm" required placeholder="Confirma tu contraseña" name="password">
+                            <input type="password" class="form-control" id="password_confirm" required placeholder="Confirma contraseña" name="password">
                             <span class="password-toggle ojito" id="registerConfirmPasswordToggle">
                                 <i class="far fa-eye"></i>
                             </span>
