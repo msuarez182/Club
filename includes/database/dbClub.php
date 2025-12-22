@@ -10,7 +10,7 @@ $dotenv->safeLoad();
 
 function dbClub()
 {
-    $dbClub = new Mysqli($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
+    $dbClub = new Mysqli($_ENV['DBC_HOST'], $_ENV['DBC_USER'], $_ENV['DBC_PASS'], $_ENV['DBC_NAME']);
     $dbClub->set_charset("utf8");
     return $dbClub;
 }
