@@ -604,6 +604,7 @@ body.menu-open {
     position: relative;
 }
 
+
 .password-toggle {
     position: absolute;
     right: 15px;
@@ -749,7 +750,7 @@ body.menu-open {
     }
 
     .password-toggle {
-        top: 65%;
+        top: 70%;
     }
 }
 
@@ -793,7 +794,7 @@ body.menu-open {
     }
 
     .password-toggle {
-        top: 60%;
+        top: 70% !important;
         right: 10px;
     }
 
