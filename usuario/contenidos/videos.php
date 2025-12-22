@@ -98,7 +98,13 @@ $base_url = '?' . http_build_query(array_filter([
 
   <!-- Contenido principal -->
   <main class="container py-4">
-    <!-- Sección superior -->
+
+
+
+
+
+
+    <!-- VIDEOS Sección superior  -->
     <div class="bg-white rounded-3 p-4 p-md-5 mb-4 shadow-sm">
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
@@ -120,10 +126,12 @@ $base_url = '?' . http_build_query(array_filter([
                     $thumbnail_url = "https://img.youtube.com/vi/$youtube_id/maxresdefault.jpg";
                   }
                 }
-
+                //se baja la resolución ya que en algunos videos la imagen en alta resolucion no existe y muestra una imagen en blanco en los videos
                 echo '<div class="carousel-item' . ($first ? ' active' : '') . ' h-100">
                                 <div class="video-thumbnail-container h-100 position-relative">
-                                    <img src="' . $thumbnail_url . '" 
+                                
+                                <img src="https://img.youtube.com/vi/'.$youtube_id.'/sddefault.jpg"
+
                                          class="d-block w-100 h-100 object-fit-cover"
                                          alt="' . $video['Titulo'] . '">
                                     <div class="play-icon position-absolute top-50 start-50 translate-middle" 
@@ -136,6 +144,16 @@ $base_url = '?' . http_build_query(array_filter([
                 $first = false;
               }
               ?>
+
+
+
+
+
+
+
+
+
+
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#videosCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
@@ -372,10 +390,10 @@ $base_url = '?' . http_build_query(array_filter([
     <?php endif; ?>
   </main>
 
- 
- 
- 
- 
+
+
+
+
   <!-- Modal para videos -->
   <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -397,19 +415,19 @@ $base_url = '?' . http_build_query(array_filter([
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/contenidos/videos.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Restablecer filtros
-    document.getElementById('reset-filters').addEventListener('click', function() {
-      window.location.href = window.location.pathname;
-    });
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Restablecer filtros
+      document.getElementById('reset-filters').addEventListener('click', function() {
+        window.location.href = window.location.pathname;
+      });
 
-    // Actualizar el campo oculto de página cuando se aplican filtros
-    document.getElementById('filter-form').addEventListener('submit', function() {
-      document.getElementById('pagina-hidden').value = 1;
+      // Actualizar el campo oculto de página cuando se aplican filtros
+      document.getElementById('filter-form').addEventListener('submit', function() {
+        document.getElementById('pagina-hidden').value = 1;
+      });
     });
-  });
-</script>
+  </script>
 
 
 </body>
