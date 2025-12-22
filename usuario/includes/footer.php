@@ -10,7 +10,7 @@
                     Plataforma especializada en salud y bienestar. Conectamos pacientes con profesionales médicos y recursos de calidad.
                 </p>
                 <!-- Redes sociales -->
-                <div class="social-links mt-3">
+                <div class="social-links mt-3" style = "font-size: 25px">
                     <a href="#" class="text-secondary me-3"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="text-secondary me-3"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="text-secondary"><i class="fab fa-youtube"></i></a>
