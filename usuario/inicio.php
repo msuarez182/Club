@@ -154,7 +154,7 @@
           <p class="lead">
             Una comunidad dedicada a brindar apoyo, educación y recursos para personas que viven con diabetes.
           </p>
-          <p>Nuestro objetivo es empoderarte con conocimiento y herramientas para que puedas manejar efectivamente tu condición y llevar una vida plena.</p>
+          <p class="lead">Nuestro objetivo es empoderarte con conocimiento y herramientas para que puedas manejar efectivamente tu condición y llevar una vida plena.</p>
           <a href="#" class="btn btn-primary-custom mt-3 restringido">Únete a nuestra comunidad</a>
         </div>
       </div>
