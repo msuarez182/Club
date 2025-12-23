@@ -29,8 +29,8 @@ $base_path = '/club/';
     <link rel="stylesheet" href="/club/usuario/assets/css/authModal.css">
 </head>
 <header>
-    <nav class="navbar navbar-light">
-        <div class="container-fluid">
+    <div class="container-fluid">
+        <nav class="navegacion">
             <!-- Botón hamburguesa -->
             <!-- navbar-toggler -->
             <button class="hamburger-btn" type="button" id="menuToggle">
@@ -39,14 +39,14 @@ $base_path = '/club/';
             </button>
 
             <!-- Logo con ruta absoluta - MÁS GRANDE -->
-            <div class="brand-center">
+            <div class="logo-club">
                 <a href="<?php echo $base_path; ?>usuario/inicio.php" id="logoLink">
-                    <img src="<?php echo $base_path; ?>usuario/assets/img/logo.png" alt="Logo" class="img-fluid">
+                    <img src="<?php echo $base_path; ?>usuario/assets/img/logo-nuevo.png" alt="Logo" class="img-fluid">
                 </a>
             </div>
 
             <!-- Imagen responsiva a la derecha - MÁS PEQUEÑA -->
-            <div class="header-right-image">
+            <div class="logo-vivir">
                 <img src="<?php echo $base_path; ?>usuario/assets/img/vivircondiabetes.png" alt="Vivir con diabetes" class="img-fluid">
             </div>
 
@@ -144,8 +144,9 @@ $base_path = '/club/';
                     <?php endif; ?>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+
 </header>
 
 <!-- Modal de Autenticación DINÁMICO -->
@@ -285,8 +286,8 @@ $base_path = '/club/';
                                     stroke-linejoin="round"
 
                                     data-bs-title="Información"
-                                    
-                                    
+
+
                                     id="informacion">
                                     <path d="M12.802 2.165l5.575 2.389c.48 .206 .863 .589 1.07 1.07l2.388 5.574c.22 .512 .22 1.092 0 1.604l-2.389 5.575c-.206 .48 -.589 .863 -1.07 1.07l-5.574 2.388c-.512 .22 -1.092 .22 -1.604 0l-5.575 -2.389a2.036 2.036 0 0 1 -1.07 -1.07l-2.388 -5.574a2.036 2.036 0 0 1 0 -1.604l2.389 -5.575c.206 -.48 .589 -.863 1.07 -1.07l5.574 -2.388a2.036 2.036 0 0 1 1.604 0z" />
                                     <path d="M12 16v.01" />
