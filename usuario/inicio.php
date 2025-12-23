@@ -140,13 +140,15 @@
     </div>
   </main>
 
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/o7ZoNx3LMHc?si=iYUu25bCEH9XZapI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
   <!-- Sección de Video -->
   <section class="video-section">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="ratio ratio-16x9 video-container">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video sobre Club Medicable" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/o7ZoNx3LMHc?si=iYUu25bCEH9XZapI" title="Video sobre Club Medicable" allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-lg-6 video-content">
