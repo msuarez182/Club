@@ -120,6 +120,7 @@ header::after {
     opacity: 1;
     box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
     padding: 0;
+     z-index: 10000;
 }
 
 @media(min-width:768px) {
@@ -128,6 +129,7 @@ header::after {
         opacity: 1;
         box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
         padding-top: 5px;
+       
     }
 }
 
@@ -299,7 +301,7 @@ header::after {
 
 .container-fluid {
     height: 100%;
-    
+
 }
 
 /* Overlay */
@@ -622,14 +624,17 @@ body.menu-open {
     width: 25px;
     height: 25px;
 }
-@media(min-width:768px){ 
-.password-toggle{
-    right: 10px;
+
+@media(min-width:768px) {
+    .password-toggle {
+        right: 10px;
+    }
+
+    .ojito {
+        right: 20px;
+    }
 }
-.ojito{
-    right: 20px;
-}
-}
+
 .password-input-group .form-control {
     padding-right: 10px;
 }
@@ -803,7 +808,8 @@ body.menu-open {
     .password-toggle {
         top: 70% !important;
     }
-    .ojito{
+
+    .ojito {
         right: 20px;
     }
 
@@ -1039,12 +1045,14 @@ body.menu-open {
         transform: scale(1);
     }
 }
-.mas-informacion{
+
+.mas-informacion {
     display: flex;
     align-items: center;
-    gap:10px
+    gap: 10px
 }
-.mas-informacion svg{
+
+.mas-informacion svg {
     width: 20px;
     color: #eb9022;
 }
@@ -1053,71 +1061,76 @@ body.menu-open {
 
 /****correccion header */
 
-.navegacion{
+.navegacion {
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     width: 100%;
     height: 100%;
     margin: 0 200px 0 0;
 }
 
-.logo-club img{
+.logo-club img {
     width: 100px;
     align-items: flex-start;
     height: 32px;
-    
-}   
- .logo-vivir img{
+
+}
+
+
+.logo-vivir img {
     width: 62px;
     height: 23px;
-    
+
 }
 
-@media(min-width:768px){ 
- .navegacion{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    width: 100%;
-    height: 100%;
-    margin: 0 200px 0 0;
+@media(min-width:768px) {
+    .navegacion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 200px 0 0;
+    }
+
+    .logo-club img {
+        width: 162px;
+        align-items: flex-start;
+        height: 58px;
+
+        object-fit: cover;
+    }
+
+    .logo-vivir img {
+        width: 108px;
+        height: 40px;
+
+    }
 }
 
-.logo-club img{
-    width: 162px;
-    align-items: flex-start;
-    height: 58px;
-    
-    object-fit: cover;
-}
-.logo-vivir img{
-    width: 108px;
-    height: 40px;
-   
-}   
-}
+@media(min-width:1024px) {
+    .navegacion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 200px 0 0;
+    }
 
-@media(min-width:1024px){ 
-    .navegacion{
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    width: 100%;
-    height: 100%;
-    margin: 0 200px 0 0;
-}
+    .logo-club{
+        width: 180px;
+        height: 65px;
+        margin-left: 140px;
+        object-fit: cover;
+    }
 
-.logo-club img{
-    width: 180px;
-    align-items: flex-start;
-    height: 65px;
-    margin-left: 140px;
-    object-fit: cover;
-}
-.logo-vivir img{
-    width: 108px;
-    height: 40px;
-    margin-right: 100px;
-}   
+
+
+    .logo-vivir img {
+        width: 108px;
+        height: 40px;
+        margin-right: 100px;
+    }
 }

@@ -79,7 +79,7 @@ $base_path = '/club/';
                             <div class="logout-icon">
                                 <a href="" class="logout-btn" id="logoutBtn">
                                     <i class="fas fa-sign-out-alt"></i>
-                                    <span class="logout-tooltip">Cerrar Sesión</span>
+                                    <span class="logout-tooltip"></span>
                                 </a>
                             </div>
                         </div>
@@ -272,7 +272,7 @@ $base_path = '/club/';
                             <label for="documento" class="mb-2">Documento de acreditación</label>
 
                             <!-- ICONO SABER MAS -->
-                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Cargue un documento que acredite sus estudios ej. credencial, matrícula (pdf o imagen)">
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus click" data-bs-content="Cargue un documento que acredite sus estudios ej. credencial, matrícula (pdf o imagen)">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="32"
