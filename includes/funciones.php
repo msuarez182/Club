@@ -53,3 +53,7 @@ function embeberYoutubeUrl($url) {
     // Si no coincide con ningún patrón, devolver el original
     return $url;
 }
+function extensionPHP(){
+    return '.php';
+}
+
