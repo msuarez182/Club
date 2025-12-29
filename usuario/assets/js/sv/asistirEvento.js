@@ -1,4 +1,4 @@
-import { clubPath } from "../funciones.js";
+import { clubPath, extensionPHP } from "../funciones.js";
 
 const formAsistirEvento = document.querySelector('#confirme-asistencia');
 
@@ -25,7 +25,7 @@ function validarFormulario(e) {
 
 async function enviarConfirmacion(formData = {}) {
     //manda la confirmación de la asistencia al backend asistir al evento
-    const url = `${clubPath()}/usuario/webinars/asistirEvento.php`
+    const url = `${clubPath()}/usuario/webinars/asistirEvento${extensionPHP()}`
     const respuesta = await fetch(url, {
         method: 'POST',
         body: formData

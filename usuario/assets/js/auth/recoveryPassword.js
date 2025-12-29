@@ -1,4 +1,4 @@
-import { alertas, clubPath, validarCorreo, mostrarSpinner } from "../funciones.js";
+import { alertas, clubPath, validarCorreo, mostrarSpinner, extensionPHP } from "../funciones.js";
 
 (function () {
 
@@ -29,7 +29,7 @@ import { alertas, clubPath, validarCorreo, mostrarSpinner } from "../funciones.j
         const btnSubmit = document.querySelector('#recoveryForm button[type="submit"]');
         //desactivamos el botón
         btnSubmit.classList.add('disabled');
-        const url = `${clubPath()}/auth/recoveryPassword.php`;
+        const url = `${clubPath()}/auth/recoveryPassword${extensionPHP()}`;
 
         try {
             mostrarSpinner(alertasRecovery);

@@ -1,4 +1,4 @@
-import { clubPath, slugify } from ".././funciones.js";
+import { clubPath, slugify, extensionPHP } from ".././funciones.js";
 
 (function () {
 
@@ -11,7 +11,7 @@ import { clubPath, slugify } from ".././funciones.js";
     async function listarSV() {
     
         //traemos todas las sv desde la bd
-        const url = `${clubPath()}/usuario/webinars/listarSV.php`;
+        const url = `${clubPath()}/usuario/webinars/listarSV${extensionPHP()}`;
         try {
             const respuesta = await fetch(url);
             const datos = await respuesta.json();

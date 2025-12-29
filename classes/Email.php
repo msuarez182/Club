@@ -23,7 +23,7 @@ class Email
 
     public function enviarCorreo()
     {
-        $url=base_path();
+        $url = base_path();
         $mail = new PHPMailer(true);
         try {
             //Credenciales
@@ -59,8 +59,9 @@ class Email
 
             // Cargar la plantilla HTML
             $contenido = '<html>';                                  //creamos el contenido html
-            $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Solicitaste la recuperación de tu cuenta, por favor da click en el siguiente enlace";
-            $contenido .= "<p><a href='".$url."auth/restablecer-password.php?token=" . $this->token . "'>Confirmar</a>";
+            $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>  solicitaste la recuperación de tu cuenta; para continuar, por favor, da clic en el siguiente enlace: ";
+            $contenido .= "<p><a href='" . $url . "auth/restablecer-password.php?token=" . $this->token . "'>Confirmar</a>";
+            $contenido .= "<p>Si no solicitaste la recuperación de tu cuenta, puedes omitir este correo. A fin de proteger tu cuenta, no reenvíes este mensaje de correo electrónico. <p>";
             $contenido .= '</html>';
             //fin creamos el contenido html
             $mail->Subject = 'Recupera tu cuenta';

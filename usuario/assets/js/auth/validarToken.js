@@ -1,4 +1,4 @@
-import { alertas, clubPath, validarUsuario } from "../funciones.js";
+import { alertas, clubPath, validarUsuario, extensionPHP } from "../funciones.js";
 (function () {
     const formulario = document.querySelector('#validar-token');
     formulario.addEventListener('submit', validarFormulario);
@@ -40,7 +40,7 @@ import { alertas, clubPath, validarUsuario } from "../funciones.js";
     async function validarToken(objPassword = {}) {
         try {
             //necesitamos enviar a la url con el queryString
-            const url = `${clubPath()}/auth/validarToken.php?token=${idToken}.php`;
+            const url = `${clubPath()}/auth/validarToken.php?token=${idToken}${extensionPHP()}`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(objPassword),

@@ -1,4 +1,4 @@
-import { validarUsuario, validarCorreo, alertas, clubPath } from '../funciones.js';
+import { validarUsuario, validarCorreo, alertas, clubPath, extensionPHP } from '../funciones.js';
 (function () {
     const formulario = document.querySelector('#formularioRegistro');
 
@@ -113,7 +113,7 @@ import { validarUsuario, validarCorreo, alertas, clubPath } from '../funciones.j
 
     async function registrarUsuario(formData = {}) {
         //enviamos los datos a la url de registro
-        const url = `${clubPath()}/auth/registro.php`;
+        const url = `${clubPath()}/auth/registro${extensionPHP()}`;
         const alertasDiv = document.querySelector('#alertas');
         try {
             //enviamos nuestros datos de registro por POST al backend

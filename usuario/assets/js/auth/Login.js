@@ -1,4 +1,4 @@
-import { validarCorreo, alertas, validarUsuario, clubPath } from "../funciones.js";
+import { validarCorreo, alertas, validarUsuario, clubPath, extensionPHP } from "../funciones.js";
 (function () {
     const formularioLogin = document.querySelector('#loginForm');
     const alertasLogin = document.querySelector('#alertas-login');
@@ -24,7 +24,9 @@ import { validarCorreo, alertas, validarUsuario, clubPath } from "../funciones.j
         loginUsuario(loginObj);
     }
     async function loginUsuario(objeto = {}) {
-        const url = `${clubPath()}/auth/login.php`;
+        const url = `${clubPath()}/auth/login${extensionPHP()}`;
+        console.log(url);
+        
         try {
             const respuesta = await fetch(url, {
                 method: 'POST',
