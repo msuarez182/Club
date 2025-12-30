@@ -1,70 +1,63 @@
 <?php
 session_start();
-require_once __DIR__ . '../../../includes/database/dbMedicable.php';
+
+require_once __DIR__ . '../../../includes/database/dbClub.php';
 require_once __DIR__ . '../../../includes/funciones.php';
+// Ahora incluir el header
+
+
+
 // Verificar login
 isLogin();
-// Ahora incluir el header
-include("../includes/authModal.php");
-// Verificar si el usuario está logueado
-if (!isset($_SESSION['correo'])) {
-  header('Location: ../login.php');
-  exit();
-}
+
 
 $correo = $_SESSION['correo'];
 $query = "SELECT * FROM usuarios WHERE correo = '$correo'";
-$resultado = mysqli_query($dbClub, $query);
-$usuario = mysqli_fetch_assoc($resultado);
+$resultado = $dbClub->query($query);
+$usuario = $resultado->fetch_array(MYSQLI_ASSOC);
+
+
 // Procesar el formulario cuando se envía
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Recoger y sanitizar los datos del formulario
   $nombre = sanitizar($_POST['nombre']);
-  $apellidos = sanitizar($_POST['apellidos']);
+  $apellido_paterno = sanitizar($_POST[ 'apellido_paterno']);
+  $apellido_materno = sanitizar($_POST[ 'apellido_materno']);
   $tipoUsuario = sanitizar($_POST['tipo_usuario']);
   $correo_form = sanitizar($_POST['correo']);
   $fecha_nacimiento = sanitizar($_POST['fecha_nacimiento']);
   $pais = sanitizar($_POST['pais']);
-  $cp = sanitizar($_POST['codigo_postal']);
+  $codigo_postal = sanitizar($_POST['codigo_postal']);
+  
 
   // Verificar si se cambió la contraseña
   $password = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : $usuario['password'];
 
   try {
     // Actualizar los datos en la base de datos
-    $update_query = $pdo->prepare("UPDATE usuarios SET 
-                                      nombre = ?, 
-                                      apellidos = ?, 
-                                      tipo_usuario = ?, 
-                                      correo = ?, 
-                                      fecha_nacimiento = ?, 
-                                      password = ?, 
-                                      pais = ?, 
-                                      codigo_postal = ? 
-                                      WHERE id = ?");
-
-    $update_query->execute([
-      $nombre,
-      $apellidos,
-      $tipoUsuario,
-      $correo_form,
-      $fecha_nacimiento,
-      $password,
-      $pais,
-      $cp,
-      $usuario['id']
-    ]);
-
-    // Actualizar la sesión con el nuevo correo si cambió
+    $update_query = "UPDATE usuarios SET 
+                        nombre = '$nombre', 
+                        apellido_paterno = '$apellido_paterno', 
+                        apellido_materno = '$apellido_materno', 
+                        tipo_usuario = '$tipoUsuario', 
+                        correo = '$correo_form', 
+                        fecha_nacimiento = '$fecha_nacimiento', 
+                        password = '$password',  
+                        codigo_postal = '$codigo_postal' 
+                        WHERE id = " . $usuario['id'];
+    
+    $dbClub->query($update_query);
+    // Actualiza la sesión con el nuevo correo si cambió
     $_SESSION['correo'] = $correo_form;
-
     // Redirigir para evitar reenvío del formulario
     header('Location: ' . $_SERVER['PHP_SELF']);
     exit();
-  } catch (PDOException $e) {
+
+  } catch (Exception $e) {
     $error = "Error al actualizar los datos: " . $e->getMessage();
   }
 }
+include("../includes/authModal.php");
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <?php endif; ?>
 
       <!-- Formulario de Edición de Perfil -->
-      <form id="profileForm" method="POST" action="">
+      <form id="profileForm" method="POST" action="" novalidate>
         <!-- Sección de Información Básica -->
         <div class="mb-5">
           <h3 class="section-title">
@@ -105,18 +98,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <label for="firstName" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="firstName" name="nombre" required value="<?php echo sanitizar($usuario['nombre']); ?>">
             </div>
-            <div class="col-md-6">
-              <label for="lastName" class="form-label">Apellido paterno</label>
-              <input type="text" class="form-control" id="lastName" name="apellidos" value="<?php echo sanitizar($usuario['apellido_paterno']); ?>" required>
+    
+          <div class="col-md-4 mb-3 mb-md-0">
+              <label for="apellido_paterno" class="form-label">Apellido paterno</label>
+              <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno" 
+                value="<?php echo sanitizar($usuario['apellido_paterno']); ?>" 
+                required>
             </div>
-          </div>
+            <div class="col-md-6 mb-3 mb-md-0">
+              <label for="apellido_materno" class="form-label">Apellido materno (opcional)</label>
+              <input type="text" class="form-control" id="apellido_materno" name="apellido_materno" 
+                value="<?php echo sanitizar($usuario['apellido_materno']); ?>">
+            </div>
 
           <div class="row mb-3">
             <div class="col-md-6 mb-3 mb-md-0">
               <label for="userType" class="form-label">Tipo de usuario</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-user-tag"></i></span>
-                <input type="text" class="form-control readonly-field" id="userType" name="tipoUsuario"
+                <input type="text" class="form-control readonly-field" id="userType" name="tipo_usuario"
                   value="<?php echo sanitizar($usuario['tipo_usuario']); ?>" readonly>
               </div>
               <small class="form-text text-muted">El tipo de usuario no puede ser modificado</small>
@@ -132,10 +132,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <label for="birthDate" class="form-label">Fecha de nacimiento</label>
               <input type="date" class="form-control datepicker" id="birthDate" name="fecha_nacimiento" placeholder="dd/mm/aaaa" value="<?php echo sanitizar($usuario['fecha_nacimiento']); ?>">
             </div>
-            <div class="col-md-6">
+             <!--<div class="col-md-6">
               <label for="country" class="form-label">País</label>
               <select class="form-select" id="country" name="pais" required>
-                <option value="">Seleccionar</option>
+                <option value="">Seleccionar</option>-->
                 <?php
                 $countryNames = [
                   'MX' => 'México',
@@ -181,20 +181,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   'ZA' => 'Sudáfrica'
                 ];
 
-                foreach ($countryNames as $code => $name):
+                /*foreach ($countryNames as $code => $name):
                   $selected = ($code == sanitizar($usuario['pais'])) ? 'selected' : '';
                 ?>
                   <option value="<?php echo $code; ?>" <?php echo $selected; ?>><?php echo $name; ?></option>
-                <?php endforeach; ?>
-              </select>
+                <?php endforeach; */?>
+            <div class="col-md-6 mb-3 mb-md-0">
+            <label for="postalCode" class="form-label">Código postal</label>
+            <input type="text" class="form-control" id="postalCode" name="codigo_postal" value="<?php echo sanitizar($usuario['codigo_postal']); ?>" required>
+          </div>  
+             
+            </select>
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="postalCode" class="form-label">Código postal</label>
-            <input type="text" class="form-control" id="postalCode" name="cp" value="<?php echo sanitizar($usuario['codigo_postal']); ?>" required>
-          </div>
-        </div>
 
         <!-- Sección de Confirmación de Cambios -->
         <div class="mb-4 password-field" id="confirmChangesSection">
@@ -257,12 +257,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Mostrar campo de contraseña si hay cambios
       const originalValues = {
         nombre: '<?php echo sanitizar($usuario['nombre']); ?>',
-        apellidos: '<?php echo sanitizar($usuario['apellidos']); ?>',
+        apellido_paterno: '<?php echo sanitizar($usuario['apellido_paterno']); ?>',
         tipoUsuario: '<?php echo sanitizar($usuario['tipo_usuario']); ?>',
         correo: '<?php echo sanitizar($usuario['correo']); ?>',
         fecha_nacimiento: '<?php echo sanitizar($usuario['fecha_nacimiento']); ?>',
         pais: '<?php echo sanitizar($usuario['pais']); ?>',
-        cp: '<?php echo sanitizar($usuario['cp']); ?>'
+        codigo_postal: '<?php echo sanitizar($usuario['codigo_postal']); ?>'
       };
 
       function checkForChanges() {
@@ -270,11 +270,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Verificar cada campo (excepto tipoUsuario que es de solo lectura)
         if ($('#firstName').val() !== originalValues.nombre) hasChanges = true;
-        if ($('#lastName').val() !== originalValues.apellidos) hasChanges = true;
+        if ($('#lastName').val() !== originalValues.apellido_paterno) hasChanges = true;
         if ($('#email').val() !== originalValues.correo) hasChanges = true;
         if ($('#birthDate').val() !== originalValues.fecha_nacimiento) hasChanges = true;
         if ($('#country').val() !== originalValues.pais) hasChanges = true;
-        if ($('#postalCode').val() !== originalValues.cp) hasChanges = true;
+        if ($('#postalCode').val() !== originalValues.codigo_postal) hasChanges = true;
 
         // Mostrar u ocultar la sección de confirmación
         if (hasChanges) {
