@@ -40,7 +40,7 @@ import { alertas, clubPath, validarUsuario, extensionPHP } from "../funciones.js
     async function validarToken(objPassword = {}) {
         try {
             //necesitamos enviar a la url con el queryString
-            const url = `${clubPath()}/auth/validarToken.php?token=${idToken}${extensionPHP()}`;
+            const url = `${clubPath()}/auth/validarToken${extensionPHP()}?token=${idToken}`;
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(objPassword),

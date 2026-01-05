@@ -75,7 +75,7 @@ if (!$num_rows) {
             </div>
         <?php } else { ?>
             <div class="bg-white rounded-3 p-4 p-md-5 mb-4 shadow-sm form-password">
-            <h2 class="text-center text-danger fw-bold">Error! token no válido</h2>
+                <h2 class="text-center text-danger fw-bold">Error! token no válido</h2>
             </div>
         <?php } ?>
     </main>
@@ -83,11 +83,9 @@ if (!$num_rows) {
     <?php include("../usuario/includes/footer.php"); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../usuario/assets/js/auth/validarToken.js" type="module" ></script>
-    <script src="../usuario/assets/js/auth/Registro.js" type="module" ></script>
-    <script src="../usuario/assets/js/auth/Login.js" type="module" ></script>
-    <script src="../usuario/assets/js/auth/recoveryPassword.js" type="module" ></script>
-    <script src="../usuario/assets/js/auth/modalRecoveryLogin.js" type="module" ></script>
+    <script src="../usuario/assets/js/auth/validarToken.js" type="module"></script>
+    <script src="../usuario/assets/js/auth/restringirContenido.js" type="module"></script>
+   
 
 </body>
 

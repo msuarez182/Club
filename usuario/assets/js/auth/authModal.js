@@ -1,10 +1,26 @@
 import { clubPath } from "../funciones.js";
 (function () {
+
+
+
     const menuToggle = document.querySelector('#menuToggle'); //funcionalidad del botón de hamburguesa
     const authModal = new bootstrap.Modal(document.querySelector('#authModal'));//Modal de Auth general, instancia
     const btnLogout = document.querySelector('#logoutBtn');//botón de cerrar sesión (solo si esta logueado)
 
+    // Paginas donde no debe mostrarse el modal 
+    const noAuthModalPages = [
+        'restablecer-password' // Donde no ejecutar modal
+       
+    ];
 
+    const currentPage = window.location.pathname.toLowerCase();
+
+    // Si estamos en una página donde no debe mostrarse el modal, salir
+    for (const page of noAuthModalPages) {
+        if (currentPage.includes(page)) {
+            return; // No ejecutar nada más en esta página
+        }
+    }
 
 
 
