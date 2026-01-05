@@ -119,8 +119,11 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.video-content {
-    padding-left: 2rem;
+
+@media(min-width:768px) {
+    .video-content {
+        padding-left: 2rem;
+    }
 }
 
 .video-content h2 {
@@ -148,7 +151,8 @@ footer {
 .btn-close {
     filter: invert(1);
 }
-.terminos-condiciones{
+
+.terminos-condiciones {
     color: #f28c28;
-    text-decoration:none;
+    text-decoration: none;
 }

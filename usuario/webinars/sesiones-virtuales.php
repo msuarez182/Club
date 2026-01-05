@@ -58,33 +58,38 @@ $sesiones = $resultado->fetch_all(MYSQLI_ASSOC);
                             <?php
 
                             foreach ($sesiones as $sv) {
-                               
+
                             ?>
                                 <div class="carousel-item active">
-                                    <img src="../assets/img/sv/<?php  echo $sv['id'] ."/". $sv['img_confirme'];  ?>" class="d-block w-100 carousel-img" alt="Alimentos saludables">
-                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
-                                        <h5 class="fw-7"><?php echo $sv['titulo'] ?></h5>
-                                        <p>Descubre recetas y planes de alimentación adecuados para ti.</p>
-                                    </div>
+                                    <a href="sesionVirtual.php?id=<?php echo $sv['id']?>&<?php echo slug( $sv['titulo'] )?>">
+
+
+
+                                        <img src="../assets/img/sv/<?php echo $sv['id'] . "/" . $sv['img_confirme'];  ?>" class="d-block w-100 carousel-img" alt="Alimentos saludables">
+                                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+                                            <h5 class="fw-7"><?php echo $sv['titulo'] ?></h5>
+                                            <p><?php echo filter_var(substr($sv['descripcion'], 0, 100),  FILTER_SANITIZE_STRING) ?></p>
+                                        </div>
+                                    </a>
                                 </div>
-                           
 
 
-                                <?php } ?>
 
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Anterior</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Siguiente</span>
-                                </button>
+                            <?php } ?>
+
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Sección de beneficios -->

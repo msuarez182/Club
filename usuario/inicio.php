@@ -34,7 +34,7 @@
               <li class="mb-2"><i class="fas fa-check text-primary-custom me-2"></i> Comunidad de apoyo</li>
             </ul>
           </div>
-          <a href="#" class="btn btn-primary-custom btn-lg px-4 restringido">Conoce más</a>
+          <a href="#club-medicable" class="btn btn-primary-custom btn-lg px-4 restringido" >Conoce más</a>
         </div>
 
         <!-- Carrusel a la derecha -->
@@ -133,6 +133,7 @@
             </div>
             <div class="card-footer bg-transparent border-0">
               <a href="contenidos/videos.php" class="btn btn-primary-custom restringido">Ver más</a>
+              <div  id="club-medicable" ></div>
             </div>
           </div>
         </div>
@@ -153,7 +154,7 @@
         </div>
         <div class="col-lg-6 video-content">
           <h2 class="h3 fw-bold border-bottom pb-2 card-title" style="color: #a1391e;">¿Qué es Club Medicable?</h2>
-          <p class="lead">
+          <p class="lead fw-2">
             Una comunidad dedicada a brindar apoyo, educación y recursos para personas que viven con diabetes.
           </p>
           <p class="lead">Nuestro objetivo es empoderarte con conocimiento y herramientas para que puedas manejar efectivamente tu condición y llevar una vida plena.</p>
