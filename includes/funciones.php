@@ -79,6 +79,4 @@ function slug($texto) {
     return $texto;
 }
 
-function extensionPHP(){
-    return '.php';
-}
+
