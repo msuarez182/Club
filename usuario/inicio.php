@@ -149,7 +149,7 @@
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="ratio ratio-16x9 video-container">
-            <iframe src="https://www.youtube.com/embed/o7ZoNx3LMHc?si=iYUu25bCEH9XZapI" title="Video sobre Club Medicable" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/PVUhkif4aWA?si=GbszPU3-Z_C4sEf6" title="Video sobre Club Medicable" allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-lg-6 video-content">
