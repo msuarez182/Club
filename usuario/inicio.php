@@ -34,7 +34,7 @@
               <li class="mb-2"><i class="fas fa-check text-primary-custom me-2"></i> Comunidad de apoyo</li>
             </ul>
           </div>
-          <a href="#club-medicable" class="btn btn-primary-custom btn-lg px-4 restringido" >Conoce más</a>
+          <a href="#club-medicable" class="btn btn-primary-custom btn-lg px-4" >Conoce más</a>
         </div>
 
         <!-- Carrusel a la derecha -->
