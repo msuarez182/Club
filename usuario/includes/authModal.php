@@ -25,6 +25,10 @@ $base_path = '/club/';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Club Medicable" />
+    <meta property="og:description" content="Una comunidad dedicada a brindar apoyo, educación y recursos para personas que viven con diabetes." />
+    <meta property="og:image" content="https://medicable.com.mx/club/usuario/assets/img/Club-Medicable.jpg" />
+    <meta property="og:url" content="https://medicable.com.mx/club/usuario/inicio" />
     <title>Club Medicable</title>
     <link rel="shortcut icon" href="/club/usuario/assets/img/ClubMedicableIco.ico" type="image/x-icon">
     <link rel="stylesheet" href="/club/usuario/assets/css/authModal.css">
