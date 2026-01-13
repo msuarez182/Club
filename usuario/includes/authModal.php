@@ -4,6 +4,7 @@ if (!isset($_SESSION)) {
 }
 require_once __DIR__ . '../../../includes/database/dbClub.php';
 require_once __DIR__ . '../../../includes/funciones.php';
+require_once __DIR__ . '../../../includes/analytics.php';
 
 // Verificar si el usuario está logueado
 $usuarioLogueado = $_SESSION['login'] ?? '';
