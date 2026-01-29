@@ -134,7 +134,7 @@ $sv = $resultado->fetch_assoc();
             <?php else : ?>
                 <!--si no existe enlace a youtube muestra el cuerpo de de la sv -->
                 <div class="text-center pt-3">
-                    <img src="../assets/img/sv/<?php echo sanitizar($sv['id'] . "/" . $sv['img_publicacion']); ?>" class="img-fluid" alt="imagen <?php echo $sv['titulo'] ?>">
+                    <img src="../assets/img/sv/<?php echo sanitizar($sv['id'] . "/" . $sv['img_publicacion']); ?>" class="img-fluid" alt="imagen <?php echo $sv['titulo'] ?>" id="img-publicacion">
                 </div>
                 <div class="article-content">
                     <!--Sin sanitizar  los datos para poder mostrar el HTML-->
@@ -155,7 +155,7 @@ $sv = $resultado->fetch_assoc();
                             <form id="confirme-asistencia">
                                 <input type="hidden" name="usuarioId" value="<?php echo $_SESSION['id'] ?>" id="usuario-id">
                                 <input type="hidden" name="svId" value="<?php echo sanitizar($id_sv) ?>" id="sv-id">
-                                <button type="submit" class="btn btn-primary-custom p-2 btn-evento ">ASISTE AL EVENTO</button>
+                                <button type="submit" class="btn btn-primary-custom p-2 btn-evento">ASISTE AL EVENTO</button>
                             </form>
                         </div>
 
@@ -185,6 +185,7 @@ $sv = $resultado->fetch_assoc();
     <?php include("../includes/banner.php"); ?>
     <?php include("../includes/footer.php"); ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="../assets/js/sv/asistirEvento.js"></script>
     <script src="../assets/js/sv/restringirSV.js"></script>

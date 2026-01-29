@@ -59,11 +59,11 @@ $base_path = '/club/';
             <div class="menu-overlay" id="menuOverlay"></div>
 
             <!-- Menú desplegable con rutas corregidas y orden alfabético -->
-            <div class="dropdown-menu" id="dropdownMenu">
-                <div class="menu-content">
+            <div class="dropdown-menu rounded-4 overflow-auto" id="dropdownMenu">
+                <div class="menu-content menu-usuario-logueado ">
                     <?php if ($usuarioLogueado): ?>
                         <!-- Sección de información del usuario con botón de cerrar sesión integrado -->
-                        <div class="user-info-section">
+                        <div class="user-info-section info-user-logueado">
                             <div class="user-info-content">
                                 <div class="user-avatar">
                                     <?php
@@ -73,7 +73,7 @@ $base_path = '/club/';
                                     ?>
                                 </div>
                                 <div class="user-details">
-                                    <div class="user-name"><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellidoPaterno']; ?></div>
+                                    <div class="user-name text-capitalize"><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellidoPaterno']; ?></div>
                                     <div class="user-email"><?php echo $_SESSION['correo']; ?></div>
                                     <div class="user-role <?php echo  'role-user'; ?>">
                                         <?php echo $_SESSION['tipo_usuario']; ?>
@@ -132,19 +132,20 @@ $base_path = '/club/';
 
                     <?php else: ?>
                         <!-- Mensaje para usuarios no logueados -->
-                        <div class="user-info-section">
+                        <div class="user-info-section mb-0">
                             <div class="guest-info">
-                                <div class="guest-icon">
-                                    <i class="fas fa-user-circle display-1"></i>
+                                <div class="guest-icon mb-0">
+                                    <img src="assets/img/Icono-inicia-sesion.png" class="icono-sesion" alt="Icono-inicia-sesion">
+                                    
                                 </div>
                                 <div class="user-email"></div>
                                 <div class="user-roles role-guests"></div>
                             </div>
                         </div>
 
-                        <div class="menu-section" style="grid-column: 1 / -1; text-align: center; padding: 15px 0;">
-                            <p>Por favor inicia sesión para acceder al contenido</p>
-                            <button class="btn btn-primary mt-2" id="loginButtonMenu">Iniciar Sesión</button>
+                        <div class="menu-section" style="grid-column: 1 / -1; text-align: center; padding: 0 0;">
+                            <p class=" fs-6  container">Por favor inicia sesión para acceder al contenido</p>
+                            <button class="btn btn-primary mt-2 btn-iniciar-sesion" id="loginButtonMenu">Iniciar Sesión</button>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -212,7 +213,7 @@ $base_path = '/club/';
                     </div>
 
                     <div class="auth-nav">
-                        <button type="button" class="auth-nav-btn" id="backToLoginFromRecovery">Volver al Login</button>
+                        <button type="button" class="auth-nav-btn" id="backToLoginFromRecovery">Volver al Inicio</button>
                     </div>
                 </form>
 
@@ -356,7 +357,7 @@ $base_path = '/club/';
                     </div>
 
                     <div class="auth-nav">
-                        <button type="button" class="auth-nav-btn" id="backToLoginFromRegister">Volver al Login</button>
+                        <button type="button" class="auth-nav-btn" id="backToLoginFromRegister">Volver al Inicio</button>
                     </div>
                 </form>
 

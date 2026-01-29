@@ -24,3 +24,13 @@ CONSTRAINT usuario_id_FK FOREIGN KEY (usuarioId) REFERENCES usuarios(id)
 
 INSERT INTO sv_usuario(usuarioId, svId) VALUES (7,1);
 DELETE FROM sv_usuario WHERE usuarioId=7;
+
+
+//TRAE LA INFO DE LA SV Y DEL usuario
+
+SELECT usuarios.nombre, sv.fecha, sv.titulo 
+FROM usuarios 
+INNER JOIN sv_usuario AS pivote
+ON usuarios.id = pivote.usuarioId
+INNER JOIN sv 
+ON sv.id = pivote.svId;

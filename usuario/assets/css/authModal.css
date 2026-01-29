@@ -120,7 +120,7 @@ header::after {
     opacity: 1;
     box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
     padding: 0;
-     z-index: 10000;
+    z-index: 10000;
 }
 
 @media(min-width:768px) {
@@ -129,7 +129,7 @@ header::after {
         opacity: 1;
         box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.2);
         padding-top: 5px;
-       
+
     }
 }
 
@@ -1119,7 +1119,7 @@ body.menu-open {
         margin: 0 200px 0 0;
     }
 
-    .logo-club{
+    .logo-club {
         width: 180px;
         height: 65px;
         margin-left: 140px;
@@ -1133,4 +1133,62 @@ body.menu-open {
         height: 40px;
         margin-right: 100px;
     }
+}
+
+
+
+/* refactorig sesion no iniciada*/
+.icono-sesion {
+    width: 100px;
+
+}
+
+.user-info-section {
+    background: #FFFFFF !important;
+}
+
+.btn-iniciar-sesion {
+    background-color: #f28c28 !important;
+    border: none !important;
+    padding: 10px 40px !important;
+}
+
+.menu-content {
+    height: 287px !important;
+}
+
+@media(min-width:768px) {
+
+    /* refactorig sesion no iniciada*/
+    .icono-sesion {
+        width: 140px;
+
+    }
+
+    .user-info-section {
+      
+        background: #FFFFFF !important;
+    }
+
+    .btn-iniciar-sesion {
+        background-color: #f28c28 !important;
+        border: none !important;
+        padding: 10px 80px !important;
+    }
+
+ 
+.menu-content {
+    height: auto
+     !important;
+}
+}
+
+
+/*MENU USUARIO LOGUEADO*/
+/* .menu-usuario-logueado{
+    height: auto !important;
+    
+} */
+.user-info-section{
+    border-bottom: 1px solid #d3d3d3 !important ;
 }
