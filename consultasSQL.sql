@@ -33,4 +33,6 @@ FROM usuarios
 INNER JOIN sv_usuario AS pivote
 ON usuarios.id = pivote.usuarioId
 INNER JOIN sv 
-ON sv.id = pivote.svId;
+ON sv.id = pivote.svId
+WHERE pivote.usuarioId=4 AND pivote.svId=3;
+
