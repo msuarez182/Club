@@ -43,7 +43,7 @@ class Email
             $mail->CharSet    = 'UTF-8';                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Enviar
-            $mail->setFrom($usuario, 'club.medicable.com');
+            $mail->setFrom($usuario, 'club.medicable.com.mx');
             $mail->addAddress($this->correo, $this->nombre);     //Add a recipient
             // $mail->addAddress('ellen@example.com');               //Name is optional
             // $mail->addReplyTo('info@example.com', 'Information');
@@ -74,11 +74,11 @@ class Email
         }
     }
 
-    public function enviarConfirmacion( $correo,  $nombre,  $titulo, $fecha )
+    public function enviarConfirmacion($correo,  $nombre,  $titulo, $fecha, $link_plataforma)
     {
-        $this->correo=$correo;
-        $this->nombre=$nombre;
-        
+        $this->correo = $correo;
+        $this->nombre = $nombre;
+
 
         $url = base_path();
         $mail = new PHPMailer(true);
@@ -100,7 +100,7 @@ class Email
             $mail->CharSet    = 'UTF-8';                               //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Enviar
-            $mail->setFrom($usuario, 'club.medicable.com');
+            $mail->setFrom($usuario, 'club.medicable.com.mx');
             $mail->addAddress($this->correo, $this->nombre);     //Add a recipient
             // $mail->addAddress('ellen@example.com');               //Name is optional
             // $mail->addReplyTo('info@example.com', 'Information');
@@ -116,12 +116,16 @@ class Email
 
             // Cargar la plantilla HTML
             $contenido = '<html>';                                  //creamos el contenido html
-            $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>  solicitaste la recuperación de tu cuenta; para continuar, por favor, da clic en el siguiente enlace: ";
-            $contenido .= "<p><a href='" . $url . "auth/restablecer-password.php?token=" . $this->token . "'>Confirmar</a>";
-            $contenido .= "<p>Si no solicitaste la recuperación de tu cuenta, puedes omitir este correo. A fin de proteger tu cuenta, no reenvíes este mensaje de correo electrónico. <p>";
+            $contenido .= "<p><strong>Hola estimado " . $this->nombre . "</strong>. Le confirmamos que su participación en la siguiente sesión ha sido registrada exitosamente:</p>";
+            $contenido .="<p> Evento: {$titulo} </p>";
+            $contenido .="<p>Fecha: {$fecha}</p>";
+            $contenido .="<p> Agradecemos su interés y esperamos contar con su presencia.<br>
+            Saludos cordiales.</p> ";
+            $contenido .= "<p><a href='".$link_plataforma."'>Acceder al evento</a>";
+            $contenido .= "<p>Por favor, no responda a este mensaje. Este mensaje se genera automáticamente </p>";
             $contenido .= '</html>';
             //fin creamos el contenido html
-            $mail->Subject = 'Recupera tu cuenta';
+            $mail->Subject = 'Club Medicable - Confirmación Sesión Virtual: ' . $titulo;
             $mail->Body    = $contenido;
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 

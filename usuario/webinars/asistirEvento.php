@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     //traemos la información del evento y el usuario
-    $query = "SELECT usuarios.nombre, usuarios.correo sv.fecha, sv.titulo 
+    $query = "SELECT usuarios.nombre, usuarios.correo, sv.fecha, sv.titulo, sv.link_plataforma 
         FROM usuarios 
         INNER JOIN sv_usuario AS pivote
         ON usuarios.id = pivote.usuarioId
@@ -29,23 +29,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = $dbClub->query($query);
     $informacion = $resultado->fetch_array(MYSQLI_ASSOC);
 
-    $nombre=$informacion['nombre'];
-    $fecha=$informacion['fecha'];
-    $titulo=$informacion['titulo'];
-    $correo=$informacion['correo'];
-    
+    $nombre = $informacion['nombre'];
+    $fecha = $informacion['fecha'];
+    $titulo = $informacion['titulo'];
+    $correo = $informacion['correo'];
+    $link_plataforma = $informacion['link_plataforma'];
 
     if ($resultado) {
         $respuesta = [
             'confirmado' => true,
-            'nombre'=>$nombre,
-            'fecha'=>$fecha,
-            'titulo'=>$titulo
+            'nombre' => $nombre,
+            'fecha' => $fecha,
+            'titulo' => $titulo
         ];
         echo json_encode($respuesta);
 
-        $enviarConfirmacion= new Email($correo, $nombre, null);
-        $enviarConfirmacion->enviarConfirmacion($correo, $nombre, $titulo, $fecha);
+        // Forzar envío al cliente para que no espere que se se resuelva el envio de email
+        
 
+        header('Content-Encoding: none');
+        header('Content-Length: ' . ob_get_length());
+        ob_end_flush();
+        flush();
+        session_write_close();
+
+        $enviarConfirmacion = new Email($correo, $nombre, null);
+        $enviarConfirmacion->enviarConfirmacion($correo, $nombre, $titulo, $fecha, $link_plataforma);
     }
 }
