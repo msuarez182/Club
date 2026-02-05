@@ -152,7 +152,7 @@ $sv = $resultado->fetch_assoc();
                         </div>
                     <?php else : ?>
                         <div class="confirme">
-                            <form id="confirme-asistencia">
+                            <form id="confirme-asistencia" >
                                 <input type="hidden" name="usuarioId" value="<?php echo $_SESSION['id'] ?>" id="usuario-id">
                                 <input type="hidden" name="svId" value="<?php echo sanitizar($id_sv) ?>" id="sv-id">
                                 <button type="submit" class="btn btn-primary-custom p-2 btn-evento">ASISTE AL EVENTO</button>

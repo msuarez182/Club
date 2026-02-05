@@ -1,4 +1,8 @@
 <?php
+
+use App\Email;
+
+
 require_once __DIR__ . '../../../includes/database/dbClub.php';
 require_once __DIR__ . '../../../includes/funciones.php';
 
@@ -14,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     //traemos la información del evento y el usuario
-    $query = "SELECT usuarios.nombre, sv.fecha, sv.titulo 
+    $query = "SELECT usuarios.nombre, usuarios.correo sv.fecha, sv.titulo 
         FROM usuarios 
         INNER JOIN sv_usuario AS pivote
         ON usuarios.id = pivote.usuarioId
@@ -28,9 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre=$informacion['nombre'];
     $fecha=$informacion['fecha'];
     $titulo=$informacion['titulo'];
+    $correo=$informacion['correo'];
     
-
-
 
     if ($resultado) {
         $respuesta = [
@@ -40,5 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'titulo'=>$titulo
         ];
         echo json_encode($respuesta);
+
+        $enviarConfirmacion= new Email($correo, $nombre, null);
+        $enviarConfirmacion->enviarConfirmacion($correo, $nombre, $titulo, $fecha);
+
     }
 }
